@@ -471,3 +471,55 @@ margin-bottom: 5px;
 .photo + .photo {
     margin-left: 30px;
 }
+.photo-set-thumb {
+    position: relative;
+}
+
+.photo-set-text {
+    color: var(--brand-color-white);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.photo-set-decor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+}
+
+.photo + .photo {
+    margin-left: 30px;
+}
+.card-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card-overlay {
+    background: linear-gradient(to right, rgba(33, 150, 243, 0.9), rgba(33, 150, 243, 0.9));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+.portfolio-card-overlay-text {
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--brand-color-white);
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+    transform: translateY(0);
+    transition: transform 250ms ease;
+}
