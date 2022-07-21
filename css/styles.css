@@ -52,7 +52,9 @@ img {
 }
 
 /* Подсветка */
-.site-nav .link:hover, .site-nav .link:focus, .site-nav .link.current {
+.site-nav .link:hover, 
+.site-nav .link:focus, 
+.site-nav .link.current {
     color: var(--brand-color-blue-light);
 }
 .site-nav {
@@ -60,6 +62,7 @@ img {
     align-items: center;
     list-style: none;     
 }
+
 
 .site-nav-element + .site-nav-element {
     margin-left: 50px;
@@ -551,4 +554,20 @@ margin-bottom: 5px;
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.site-nav-element {
+    position: relative;
+}
+
+.link.current::after {
+    display: block;
+    margin-top: 28px;
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: var(--brand-color-blue-light);
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
 }
