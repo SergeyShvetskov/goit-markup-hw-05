@@ -13,7 +13,7 @@
     --brand-color-heder-line: #ECECEC;
     --brand-color-address:rgba(255, 255, 255, 0.6);
     --card-set-portfolio: 30px;
-    --animation-duration: 1250ms;
+    --animation-duration: 250ms;
     --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 h1, h2, h3, h4, h5, h6, p, ul {
