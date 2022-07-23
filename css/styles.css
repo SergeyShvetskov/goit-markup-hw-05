@@ -1,7 +1,7 @@
 :root {
-    --brand-color-blue-light-hover: #188CE8;
+    --brand-color-blue: #3f51b5;
     --brand-color-blue-light: #2196F3;
-    --brand-color-blue: #3f51b5;    
+    --brand-color-blue-light-hover: #188CE8;    
     --brand-color-black: #000000;
     --brand-color-black-light: #212121;
     --brand-color-black-dark: #2F303A;
@@ -12,7 +12,9 @@
     --brand-color-white: #FFFFFF;
     --brand-color-heder-line: #ECECEC;
     --brand-color-address:rgba(255, 255, 255, 0.6);
-    --card-set-portfolio: 30px
+    --card-set-portfolio: 30px;
+    --animation-duration: 250ms;
+    --animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
@@ -52,24 +54,10 @@ img {
 }
 
 /* Подсветка */
-.site-nav .link:hover, 
-.site-nav .link:focus, 
-.site-nav .link.current {
-    color: var(--brand-color-blue-light);
-}
 .site-nav {
     display: flex;
     align-items: center;
     list-style: none;     
-}
-
-
-.site-nav-element + .site-nav-element {
-    margin-left: 50px;
-}
-
-.navigation {
-    display: flex;
 }
 .site-nav .link {    
     display: block;
@@ -77,8 +65,25 @@ img {
     font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--brand-color-black-light);
+
+    transition: color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
-/* Хедер почта телефон */
+.site-nav .link:hover, 
+.site-nav .link:focus, 
+.site-nav .link.current {
+    color: var(--brand-color-blue-light);
+}
+.site-nav-element + .site-nav-element {
+    margin-left: 50px;
+}
+
+.navigation {
+    display: flex;
+}
+
+/* Хедер, почта, телефон */
 .auth-nav {
     margin-left: auto;
     display: flex;
@@ -94,6 +99,10 @@ img {
     font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--brand-color-gray);
+
+    transition: color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
 .auth-nav .link:hover, .auth-nav .link:focus {
     color: var(--brand-color-blue-light);       
@@ -137,8 +146,12 @@ img {
     background: var(--brand-color-blue-light);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     line-height: 1.88;
+    transition: background;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
-.hero .button:hover{
+.hero .button:hover, 
+.hero .button:focus {
     background-color: var(--brand-color-blue-light-hover);
 }
 .hero {
@@ -219,12 +232,16 @@ img {
     color: var(--brand-color-gray-icon);
     background: none;    
     border: none;
+    border-radius: 50%;
+
+    transition: color, background-color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
 .personal-card-button:hover,
 .personal-card-button:focus {
     color: var(--brand-color-white);
-    background-color: var(--brand-color-blue-light);
-    border-radius: 50%;
+    background-color: var(--brand-color-blue-light);    
 }
 .personal-card-icon-item + .personal-card-icon-item {
     margin-left: 10px;
@@ -282,12 +299,8 @@ img {
     display: flex;
     list-style: none;
 }
-.regular-customers-item-frame {
-    cursor: pointer;
-    padding: 13px 31px;
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;
-}
+
+
 .regular-customers-item + .regular-customers-item {
     margin-left: 30px;
 }
@@ -310,6 +323,10 @@ img {
     border: 1px solid var(--brand-color-gray-icon);
     border-radius: 4px;
     background-color: var(--brand-color-white);
+
+    transition: color, border;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
 .regular-customers-button:hover, 
 .regular-customers-button:focus {
@@ -342,6 +359,9 @@ margin-bottom: 5px;
 .address .link {    
     display: block;
     color: var(--brand-color-address);
+    transition: color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
 .address .link:first-child {
 margin-bottom: 5px;
@@ -361,7 +381,7 @@ margin-bottom: 5px;
     color: var(--brand-color-white);
     font-weight: 700;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.14;
     letter-spacing: 0.03em;
 }
 
@@ -378,17 +398,25 @@ margin-bottom: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;    
     border: none;
+
+    transition: color, background-color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
 
 .footer-icon-button:hover,
 .footer-icon-button:focus {    
     background-color: var(--brand-color-blue-light);
-    border-radius: 50%;
 }
 .footer > .container {
     display: flex;
 }
 /* Портфолио фильтры*/
+.buttons {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
 .button {
     padding: 6px 22px;  
     margin: 0px 4px;   
@@ -401,19 +429,27 @@ margin-bottom: 5px;
     font-size: 16px;
     line-height: 1.62;    
     letter-spacing: inherit;    
-    border-radius: 4px;    
+    border-radius: 4px;
+
+    transition: color, background, box-shadow;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
-.buttons {
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;    
-}
+
 .button:hover, .button:focus {
     color: var(--brand-color-white);
     background: var(--brand-color-blue-light);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* Портфолио карточки */
+.portfolio-card {
+    text-decoration: none;
+    display: block;
+
+    transition: box-shadow;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
+}
 .portfolio-card-set-title {
     display: none;
 }
@@ -424,11 +460,11 @@ margin-bottom: 5px;
     flex-wrap: wrap;
 }
 
-
-.portfolio-card:hover, 
+.portfolio-card:hover,
 .portfolio-card:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .portfolio-card-item {
     margin-top: var(--card-set-portfolio);
     margin-left: var(--card-set-portfolio);
@@ -442,6 +478,7 @@ margin-bottom: 5px;
 }
 
 .portfolio-card-title {
+    color: var(--brand-color-black-light);
     margin-bottom: 4px;
     font-size: 18px;
     line-height: 2;
@@ -504,14 +541,23 @@ margin-bottom: 5px;
     overflow: hidden;
 }
 
-.portfolio-card-overlay {
-    background-color: rgba(33, 150, 243, 0.9);
+
+.portfolio-card-overlay {    
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
+
+    transition-property: transform;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
+}
+.portfolio-card:hover .portfolio-card-overlay,
+.portfolio-card:focus .portfolio-card-overlay  {    
+    transform: translateY(0);    
 }
 
 .portfolio-card-overlay-text {
@@ -521,23 +567,28 @@ margin-bottom: 5px;
     letter-spacing: 0.03em;
     color: var(--brand-color-white);
 }
-
-.portfolio-card:hover .portfolio-card-overlay {
-    transform: translateY(0);
-    transition: transform 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop {
+/* Анимация модалки */
+.backdrop {    
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transform: scale(1);
+    transition-property: opacity, transform;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
 }
-
+.backdrop.is-hidden {
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+}
 .modal {
+    padding: 8px;
+    text-align: end;
     position: absolute;
     top: 50%;
     left: 50%;    
@@ -547,27 +598,55 @@ margin-bottom: 5px;
     background-color: var(--brand-color-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    /* opacity: 1; */
-    transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition-delay: 250ms;
 }
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
+/* декоративное подчеркивание */
 .site-nav-element {
     position: relative;
 }
-
-.link.current::after {
-    display: block;
-    margin-top: 28px;
+.site-nav-element>.link::after {    
     position: absolute;
     content: "";
-    height: 4px;
-    background-color: var(--brand-color-blue-light);
+    display: block;
     height: 4px;
     width: 100%;
+    margin-top: 28px;
+    background-color: var(--brand-color-blue-light);
     border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
+}
+
+.site-nav-element > .link:hover::after,
+.site-nav-element>.link:focus::after {
+    transform: scaleX(1);
+}
+
+.link.current::after {
+    transform: scaleX(1);    
+}
+
+.button-close {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--brand-color-white);
+
+    transition: color;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
+}
+
+.button-close:hover, 
+.button-close:focus {
+    color: var(--brand-color-blue-light);    
+}
+
+.button-close-svg {
+    width: 11px;
+    height: 11px;
+    fill: currentColor;
 }
