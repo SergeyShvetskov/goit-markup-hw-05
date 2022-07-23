@@ -580,6 +580,7 @@ margin-bottom: 5px;
     transition-property: opacity, transform;
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--animation-timing-function);
+    z-index: 999;
 }
 .backdrop.is-hidden {
     transform: scale(0.5);
